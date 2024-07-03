@@ -28,16 +28,19 @@
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
+    width: 100%;
   }
 
+ 
+
   input[type="text"] {
-    padding: 1rem;
+    padding: 1rem 1rem;
+    width: 100%;
     font-size: 1rem;
     border: 1px solid #00f5a0;
     border-radius: 0.25rem;
     margin-right: 0.5rem;
-    width: 80%;
-    max-width: 20rem;
+    
     background-color: #1c1c1c;
     color: #ffffff;
     transition: border-color 0.3s;
@@ -48,7 +51,7 @@
   }
 
   button {
-    width: 5rem;
+    width: 75px;
     font-size: 1rem;
     border: none;
     border-radius: 0.25rem;
@@ -59,22 +62,29 @@
   }
 
   button:hover {
-    background-color: #00ffcc;
+    background-color: #2ad8ff;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
-  }
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    
+}
+
 
   li {
     background-color: #1c1c1c;
     font-size: 15px;
     border: 1px solid #00f5a0;
     border-radius: 0.25rem;
-    padding: 0.8rem;
+    padding: 0.5rem;
+    width: 96%; /* Adjusted width */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center horizontally */
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -82,6 +92,7 @@
     cursor: pointer; /* Make li clickable */
     margin-bottom: 0.3rem;
   }
+  
 
   li:hover {
     transform: scale(1.02);
@@ -127,8 +138,8 @@
   }
 
   .checkbox {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     padding: 1rem;
     margin-right: 0.5rem;
   }
@@ -189,14 +200,19 @@
   }
 
   button:hover {
-    background-color: #00ffcc;
+    background-color: #2ad8ff;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
     
-  }
+}
+
 
   li {
     background-color: #1c1c1c;
@@ -204,7 +220,7 @@
     border: 1px solid #00f5a0;
     border-radius: 0.25rem;
     padding: 0.8rem;
-    width: 50rem; /* Adjusted width */
+    width: 26rem; /* Adjusted width */
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;
@@ -234,8 +250,8 @@
   li button {
     list-style-type: unset;
     font-size: 7px;
-    width: 25px;
-    height: 20px;
+    width: 35px;
+    height: 30px;
     background-color: #fdcace;
     margin-right: 3px;
     transition: background-color 0.3s;
