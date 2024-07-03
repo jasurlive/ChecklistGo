@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
+import Footer from './Footer'; // Import the Footer component
 
 function App() {
   const [items, setItems] = useState(() => {
@@ -9,14 +10,13 @@ function App() {
   const [input, setInput] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(null);
-  const inputRef = useRef(null); // Create a ref to hold the input element
+  const inputRef = useRef(null);
 
   useEffect(() => {
     localStorage.setItem('items', JSON.stringify(items));
   }, [items]);
 
   useEffect(() => {
-    // Focus on the input when isEditing becomes true
     if (isEditing && inputRef.current) {
       inputRef.current.focus();
     }
@@ -55,64 +55,67 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Grocery List</h1>
-      <div className="input-container">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Add an item"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              addItem(); // Call addItem on Enter key press
-            }
-          }}
-          ref={inputRef} // Assign the inputRef to the input element
-        />
-        <button onClick={addItem}>{isEditing ? '✅ Update' : '➕'}</button>
-      </div>
-      <ul>
-        {items.map((item, index) => (
-          <li
-            key={index}
-            className={item.completed ? 'completed' : ''}
-            onClick={() => toggleComplete(index)}
-          >
-            <span className={item.completed ? 'completed-text' : ''}>{item.text}</span>
-            <div className="checkbox-container">
-              <input
-                type="checkbox"
-                className="checkbox"
-                checked={item.completed}
-                onChange={(e) => {
-                  e.stopPropagation();
-                  toggleComplete(index);
-                }}
-              />
-              <div>
-                <button
-                  onClick={(e) => {
+    <>
+      <div className="App">
+        <h1>Grocery List</h1>
+        <div className="input-container">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Add an item"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                addItem();
+              }
+            }}
+            ref={inputRef}
+          />
+          <button onClick={addItem}>{isEditing ? '✅ Update' : '➕'}</button>
+        </div>
+        <ul>
+          {items.map((item, index) => (
+            <li
+              key={index}
+              className={item.completed ? 'completed' : ''}
+              onClick={() => toggleComplete(index)}
+            >
+              <span className={item.completed ? 'completed-text' : ''}>{item.text}</span>
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  className="checkbox"
+                  checked={item.completed}
+                  onChange={(e) => {
                     e.stopPropagation();
-                    editItem(index);
+                    toggleComplete(index);
                   }}
-                >
-                  ✏️
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    removeItem(index);
-                  }}
-                >
-                  ❌
-                </button>
+                />
+                <div>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      editItem(index);
+                    }}
+                  >
+                    ✏️
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      removeItem(index);
+                    }}
+                  >
+                    ❌
+                  </button>
+                </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <Footer /> {/* Add the Footer component outside the main div */}
+    </>
   );
 }
 
