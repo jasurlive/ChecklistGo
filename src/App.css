@@ -18,7 +18,33 @@
     color: #ffffff;
   }
 
+  .undo-button, .redo-button, .trash-button {
+    background-color: #c3c2c2; /* Button background color */
+    color: #333; /* Button text color */
+    font-size: 1.2rem; /* Font size */
+    font-weight: bold;
+    border: 1px solid #494949; /* Border */
+    border-radius: 4px; /* Border radius */
+    padding: 0.5rem 0.5rem; /* Padding */
+    margin-right: 1rem; /* Optional: Adjust spacing between buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for background color and transform */
+  }
+  
+  .undo-button:hover, .redo-button:hover, .trash-button:hover {
+    background-color: wheat;
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .undo-button:active, .redo-button:active, .trash-button:active {
+    background-color: #f4a3ff; /* Active background color */
+    transform: scale(0.9); /* Scale down effect on click */
+  }
 
+  .trash-button {
+    font-size: 17px;
+    
+  }
+  
   
 
   h1 {
@@ -66,6 +92,10 @@
 
   button:hover {
     background-color: #2ad8ff;
+  }
+
+  button:active {
+    transform: scale(0.9); /* Scale down effect on click */
   }
 
   ul {
@@ -163,6 +193,34 @@
   }
 
 
+  .undo-button, .redo-button, .trash-button {
+    background-color: #c3c2c2; /* Button background color */
+    color: #333; /* Button text color */
+    font-size: 1.2rem; /* Font size */
+    font-weight: bold;
+    border: 1px solid #494949; /* Border */
+    border-radius: 4px; /* Border radius */
+    padding: 0.5rem 0.5rem; /* Padding */
+    margin-right: 1rem; /* Optional: Adjust spacing between buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for background color and transform */
+  }
+  
+  .undo-button:hover, .redo-button:hover, .trash-button:hover {
+    background-color: wheat;
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .undo-button:active, .redo-button:active, .trash-button:active {
+    background-color: #f4a3ff; /* Active background color */
+    transform: scale(0.9); /* Scale down effect on click */
+  }
+  
+  .trash-button {
+    font-size: 17px;
+    
+  }
+  
+  
   
 
   h1 {
@@ -208,6 +266,11 @@
   button:hover {
     background-color: #2ad8ff;
   }
+
+  button:active {
+    transform: scale(0.9); /* Scale down effect on click */
+  }
+
 
   ul {
     list-style-type: none;
@@ -282,8 +345,8 @@
   }
 
   .checkbox {
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
     padding: 1rem;
     margin-right: 0.5rem;
   }

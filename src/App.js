@@ -1,12 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-import Footer from './Footer'; // Import the Footer component
+import Footer from './Footer';
+import useHistory from './history';
 
 function App() {
-  const [items, setItems] = useState(() => {
-    const savedItems = localStorage.getItem('items');
-    return savedItems ? JSON.parse(savedItems) : [];
-  });
+  const savedItems = localStorage.getItem('items');
+  const initialItems = savedItems ? JSON.parse(savedItems) : [];
+  const {
+    state: items,
+    set: setItems,
+    undo,
+    redo,
+    canUndo,
+    canRedo,
+  } = useHistory(initialItems);
+
   const [input, setInput] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(null);
@@ -54,6 +62,10 @@ function App() {
     setItems(newItems);
   };
 
+  const clearAllItems = () => {
+    setItems([]);
+  };
+
   return (
     <>
       <div className="App">
@@ -72,6 +84,17 @@ function App() {
             ref={inputRef}
           />
           <button onClick={addItem}>{isEditing ? '✅ Update' : '➕'}</button>
+        </div>
+        <div className="history-controls">
+          <button className="undo-button" onClick={undo} disabled={!canUndo} title="Undo">
+          ↩
+          </button>
+          <button className="redo-button" onClick={redo} disabled={!canRedo} title="Redo">
+          ↪
+          </button>
+          <button className="trash-button" onClick={clearAllItems} title="Clear All">
+          ✘
+          </button>
         </div>
         <ul>
           {items.map((item, index) => (
@@ -114,7 +137,7 @@ function App() {
           ))}
         </ul>
       </div>
-      <Footer /> {/* Add the Footer component outside the main div */}
+      <Footer />
     </>
   );
 }
