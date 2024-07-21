@@ -69,7 +69,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>Grocery List</h1>
+        <h1>To-Do List</h1>
         <div className="input-container">
           <input
             type="text"

@@ -2,7 +2,7 @@
   "name": "grocery-list",
   "version": "1.1.0",
   "private": true,
-  "homepage": "https://jasurgraduate.github.io/grocery-list/",
+  "homepage": "https://jasurgraduate.github.io/to-do-list/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
