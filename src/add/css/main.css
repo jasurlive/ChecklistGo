@@ -37,14 +37,14 @@ h1 {
     color: var(--accent-color);
 }
 
-a {
+header a {
     color: var(--accent-color);
     text-decoration: none;
     border: var(--accent-color) solid 1px;
     padding: 0.5rem 1rem;
 }
 
-a:hover {
+header a:hover {
     color: var(--hover-color);
 }
 
