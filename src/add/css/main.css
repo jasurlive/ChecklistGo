@@ -40,6 +40,8 @@ h1 {
 a {
     color: var(--accent-color);
     text-decoration: none;
+    border: var(--accent-color) solid 1px;
+    padding: 0.5rem 1rem;
 }
 
 a:hover {
@@ -178,6 +180,10 @@ li button:first-of-type:hover {
 
 
 @media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
 
     input[type="text"] {
         width: 100%;
