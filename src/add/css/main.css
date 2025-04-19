@@ -20,8 +20,11 @@
 }
 
 .main-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 2rem;
+    gap: 1rem;
     font-family: var(--main-font);
     background: var(--main-bg);
     min-height: 100vh;
@@ -30,14 +33,13 @@
 
 h1 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1rem;
     color: var(--accent-color);
 }
 
 .input-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
 }
 
 input[type="text"] {
@@ -109,9 +111,12 @@ button:active {
 
 ul {
     list-style-type: none;
-    padding: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin-bottom: 5rem;
 }
 
 li {
@@ -119,7 +124,7 @@ li {
     font-size: 15px;
     border: 1px solid var(--list-border);
     border-radius: 0.25rem;
-    padding: 0.8rem;
+    padding: 0.8rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,11 +133,10 @@ li {
     color: var(--text-color);
     cursor: pointer;
     margin-bottom: 0.3rem;
-    width: 96%;
 }
 
 li:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -148,11 +152,8 @@ li span {
 
 li button {
     list-style-type: unset;
-    font-size: 7px;
-    width: 35px;
-    height: 30px;
+    font-size: 0.5rem;
     background-color: var(--btn-delete-bg);
-    margin-right: 3px;
     transition: background-color 0.3s;
 }
 
@@ -165,60 +166,41 @@ li button:first-of-type:hover {
     background-color: var(--hover-color);
 }
 
-.checkbox-container {
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
 
-.checkbox {
-    padding: 1rem;
-    margin-right: 0.5rem;
-}
 
 @media (max-width: 768px) {
+
     input[type="text"] {
-        width: auto;
+        width: 100%;
+    }
+
+    .checkbox,
+    .button-group button {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
     }
 
     li {
-        width: 96%;
-        padding: 0.5rem;
-    }
-
-    li button {
-        width: 25px;
-        height: 20px;
-    }
-
-    .checkbox {
-        width: 20px;
-        height: 20px;
+        width: 100%;
     }
 }
 
 @media (min-width: 769px) {
+
+
     input[type="text"] {
-        width: 80%;
-        max-width: 20rem;
+        width: 25rem;
+    }
+
+    .checkbox,
+    .button-group button {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
     }
 
     li {
-        width: 26rem;
-    }
-
-    .checkbox {
-        width: 30px;
-        height: 30px;
-    }
-}
-
-@keyframes backgroundAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 100% 50%;
+        width: 30rem;
     }
 }
