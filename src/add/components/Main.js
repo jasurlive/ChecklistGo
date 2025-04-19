@@ -71,7 +71,9 @@ function Main() {
   return (
     <>
       <div className="main-app">
-        <h1>To-Do List</h1>
+        <h1>
+          <a href="/">ChecklistGo.vercel.app</a>
+        </h1>
         <div className="input-container">
           <input
             type="text"
