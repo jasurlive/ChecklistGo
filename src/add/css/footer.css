@@ -6,23 +6,19 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    animation: backgroundAnimation 10s infinite alternate;
 }
 
 .footer p {
-    margin: 0;
     font-size: 1rem;
-    font-family: 'Orbitron', sans-serif;
     animation: textGlow 1s infinite alternate;
 }
 
 .footer a {
     color: #63f3fd;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .footer a:hover {
     color: #ffea9c;
-    transform: scale(1.5);
 }
