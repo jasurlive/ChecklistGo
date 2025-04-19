@@ -122,34 +122,32 @@ function Main() {
               <span className={item.completed ? "completed-text" : ""}>
                 {item.text}
               </span>
-              <div className="checkbox-container">
-                <input
-                  type="checkbox"
-                  className="checkbox"
-                  checked={item.completed}
-                  onChange={(e) => {
+              <input
+                type="checkbox"
+                className="checkbox"
+                checked={item.completed}
+                onChange={(e) => {
+                  e.stopPropagation();
+                  toggleComplete(index);
+                }}
+              />
+              <div className="button-group">
+                <button
+                  onClick={(e) => {
                     e.stopPropagation();
-                    toggleComplete(index);
+                    editItem(index);
                   }}
-                />
-                <div>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      editItem(index);
-                    }}
-                  >
-                    ✏️
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      removeItem(index);
-                    }}
-                  >
-                    ❌
-                  </button>
-                </div>
+                >
+                  ✏️
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeItem(index);
+                  }}
+                >
+                  ❌
+                </button>
               </div>
             </li>
           ))}
