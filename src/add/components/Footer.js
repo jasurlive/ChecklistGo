@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import "../css/footer.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="footer">
       <p>
-        © 2019-{currentYear} Designed by <a href="https://jasurlive.uz" target="_blank" rel="noopener noreferrer">@jasurjacob</a>
+        © 2019-{currentYear} Designed by{" "}
+        <a href="https://jasurlive.uz">jasurlive.uz</a>
       </p>
     </footer>
   );

@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
-import Footer from './Footer';
-import useHistory from './history';
+import React, { useState, useEffect, useRef } from "react";
+import "../css/main.css";
+import useHistory from "../components/history";
 
-function App() {
-  const savedItems = localStorage.getItem('items');
+function Main() {
+  const savedItems = localStorage.getItem("items");
   const initialItems = savedItems ? JSON.parse(savedItems) : [];
   const {
     state: items,
@@ -15,13 +14,13 @@ function App() {
     canRedo,
   } = useHistory(initialItems);
 
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(null);
   const inputRef = useRef(null);
 
   useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(items));
+    localStorage.setItem("items", JSON.stringify(items));
   }, [items]);
 
   useEffect(() => {
@@ -41,7 +40,7 @@ function App() {
       } else {
         setItems([...items, { text: input, completed: false }]);
       }
-      setInput('');
+      setInput("");
     }
   };
 
@@ -58,7 +57,10 @@ function App() {
 
   const toggleComplete = (index) => {
     const newItems = [...items];
-    newItems[index] = { ...newItems[index], completed: !newItems[index].completed };
+    newItems[index] = {
+      ...newItems[index],
+      completed: !newItems[index].completed,
+    };
     setItems(newItems);
   };
 
@@ -68,7 +70,7 @@ function App() {
 
   return (
     <>
-      <div className="App">
+      <div className="main-app">
         <h1>To-Do List</h1>
         <div className="input-container">
           <input
@@ -77,33 +79,49 @@ function App() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Add an item"
             onKeyDown={(e) => {
-              if (e.key === 'Enter') {
+              if (e.key === "Enter") {
                 addItem();
               }
             }}
             ref={inputRef}
           />
-          <button onClick={addItem}>{isEditing ? '✅ Update' : '➕'}</button>
+          <button onClick={addItem}>{isEditing ? "✅ Update" : "➕"}</button>
         </div>
         <div className="history-controls">
-          <button className="undo-button" onClick={undo} disabled={!canUndo} title="Undo">
-          ↩
+          <button
+            className="undo-button"
+            onClick={undo}
+            disabled={!canUndo}
+            title="Undo"
+          >
+            ↩
           </button>
-          <button className="redo-button" onClick={redo} disabled={!canRedo} title="Redo">
-          ↪
+          <button
+            className="redo-button"
+            onClick={redo}
+            disabled={!canRedo}
+            title="Redo"
+          >
+            ↪
           </button>
-          <button className="trash-button" onClick={clearAllItems} title="Clear All">
-          ✘
+          <button
+            className="trash-button"
+            onClick={clearAllItems}
+            title="Clear All"
+          >
+            ✘
           </button>
         </div>
         <ul>
           {items.map((item, index) => (
             <li
               key={index}
-              className={item.completed ? 'completed' : ''}
+              className={item.completed ? "completed" : ""}
               onClick={() => toggleComplete(index)}
             >
-              <span className={item.completed ? 'completed-text' : ''}>{item.text}</span>
+              <span className={item.completed ? "completed-text" : ""}>
+                {item.text}
+              </span>
               <div className="checkbox-container">
                 <input
                   type="checkbox"
@@ -137,9 +155,8 @@ function App() {
           ))}
         </ul>
       </div>
-      <Footer />
     </>
   );
 }
 
-export default App;
+export default Main;
