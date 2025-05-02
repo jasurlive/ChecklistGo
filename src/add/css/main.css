@@ -40,7 +40,7 @@ h1 {
 header a {
     color: var(--accent-color);
     text-decoration: none;
-    border: var(--accent-color) solid 1px;
+    border: #00f59f2e solid 1px;
     padding: 0.5rem 1rem;
 }
 
