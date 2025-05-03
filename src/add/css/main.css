@@ -1,0 +1,221 @@
+:root {
+    --main-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --main-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --text-color: #ffffff;
+    --accent-color: #00f5a0;
+    --hover-color: #2ad8ff;
+    --active-color: #f4a3ff;
+    --completed-color: #6c757d;
+    --input-bg: #1c1c1c;
+    --input-border: #00f5a0;
+    --input-focus-border: #00ffcc;
+    --btn-bg: #00f5a0;
+    --btn-color: #000;
+    --btn-secondary-bg: #c3c2c2;
+    --btn-hover-bg: wheat;
+    --list-bg: #1c1c1c;
+    --list-border: #00f5a0;
+    --btn-delete-bg: #fdcace;
+    --btn-edit-bg: #f7e3bd;
+}
+
+.main-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    font-family: var(--main-font);
+    background: var(--main-bg);
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 1rem;
+    color: var(--accent-color);
+}
+
+header a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border: #00f59f2e solid 1px;
+    padding: 0.5rem 1rem;
+}
+
+header a:hover {
+    color: var(--hover-color);
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"] {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--input-border);
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--input-focus-border);
+}
+
+button {
+    width: 5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+.undo-button,
+.redo-button,
+.trash-button {
+    background-color: var(--btn-secondary-bg);
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid #494949;
+    border-radius: 4px;
+    width: 5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.undo-button:hover,
+.redo-button:hover,
+.trash-button:hover {
+    background-color: var(--btn-hover-bg);
+    cursor: pointer;
+}
+
+.undo-button:active,
+.redo-button:active,
+.trash-button:active {
+    background-color: var(--active-color);
+    transform: scale(0.9);
+}
+
+.trash-button {
+    font-size: 15px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin-bottom: 5rem;
+}
+
+li {
+    background-color: var(--list-bg);
+    font-size: 15px;
+    border: 1px solid var(--list-border);
+    border-radius: 0.25rem;
+    padding: 0.8rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-bottom: 0.3rem;
+}
+
+li:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: var(--completed-color);
+}
+
+li span {
+    flex: 1;
+    cursor: pointer;
+}
+
+li button {
+    list-style-type: unset;
+    font-size: 0.5rem;
+    background-color: var(--btn-delete-bg);
+    transition: background-color 0.3s;
+}
+
+li button:first-of-type {
+    background-color: var(--btn-edit-bg);
+}
+
+li button:hover,
+li button:first-of-type:hover {
+    background-color: var(--hover-color);
+}
+
+
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    .checkbox,
+    .button-group button {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+    }
+
+    li {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+
+
+    input[type="text"] {
+        width: 25rem;
+    }
+
+    .checkbox,
+    .button-group button {
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+    }
+
+    li {
+        width: 30rem;
+    }
+}
