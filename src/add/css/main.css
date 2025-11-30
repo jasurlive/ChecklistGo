@@ -177,10 +177,104 @@ li button:first-of-type:hover {
     background-color: var(--hover-color);
 }
 
+/* Layout adjustments for sortable items: handle left, text center, actions right */
+.sortable-item {
+    will-change: transform, opacity, margin;
+    transition: transform 180ms cubic-bezier(.2, .8, .2, 1), opacity 120ms linear, margin 180ms ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    box-sizing: border-box;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
 
+.drag-handle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: grab;
+    font-size: 1.1rem;
+    user-select: none;
+    -webkit-user-drag: none;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+.sortable-item>span {
+    flex: 1 1 auto;
+    text-align: left;
+    padding: 0 0.25rem;
+}
+
+.checkbox {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.sortable-item[style*="z-index: 999"] {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: scale(1.02);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.drag-overlay {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+}
+
+.drag-overlay .sortable-item {
+    width: auto;
+    max-width: 100%;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+    background-color: var(--list-bg);
+    border-radius: 6px;
+    transform: translateZ(0) scale(1.02);
+    transition: box-shadow 140ms ease, transform 140ms ease;
+    opacity: 1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.drag-overlay .sortable-item:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    border-radius: 6px;
+    box-shadow:
+        -8px 0px 8px rgba(255, 251, 251, 0.5),
+        8px 0px 8px rgba(255, 251, 251, 0.5);
+}
+
+.drag-overlay .sortable-item>span {
+    flex: 1 1 auto;
+    text-align: left;
+    padding: 0 0.25rem;
+}
 
 @media (max-width: 768px) {
-
     h1 {
         font-size: 1.5rem;
     }
