@@ -3,7 +3,7 @@
     padding: 0.5rem;
     background: linear-gradient(135deg, #203a43, #2c5364);
     color: #ffffff;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
