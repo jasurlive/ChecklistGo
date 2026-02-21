@@ -1,5 +1,6 @@
 html {
     background: linear-gradient(#0b171f, #050a0b);
+    min-height: 100%;
 }
 
 body {
@@ -9,8 +10,7 @@ body {
 }
 
 .main-app {
-    background: rgba(10, 20, 16, 0.75);
-    backdrop-filter: blur(14px);
+    backdrop-filter: blur(5px);
     border: 1px solid rgba(0, 145, 255, 0.12);
     border-radius: 10px;
     box-shadow: 0 20px 60px rgba(0, 157, 255, 0.08);
@@ -134,10 +134,15 @@ ul {
     background: rgba(7, 19, 15, 0.9);
     border: 1px solid rgba(0, 166, 255, 0.18);
     border-radius: 10px;
-    padding: 0.65rem 0.9rem;
+    padding: 0.65rem 0.5rem;
     cursor: pointer;
     transition: 0.2s ease;
     user-select: none;
+}
+
+.sortable-item svg {
+    vertical-align: middle;
+    font-size: 1.2rem;
 }
 
 .sortable-item:hover {

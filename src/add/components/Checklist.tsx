@@ -20,6 +20,8 @@ import {
 import { ItemButtons, HistoryButtons } from "../tools/Buttons";
 import "../css/checklist.css";
 
+import { GrDrag } from "react-icons/gr";
+
 function Checklist() {
   const createItemId = () =>
     Date.now().toString(36) + Math.random().toString(36).slice(2, 9);
@@ -92,7 +94,7 @@ function Checklist() {
           {...listeners}
           onClick={(e) => e.stopPropagation()}
         >
-          ☰
+          <GrDrag/>
         </div>
 
         <span className={item.completed ? "completed-text" : "normal-text"}>

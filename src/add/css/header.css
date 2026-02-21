@@ -2,11 +2,11 @@
     --font: 'Trebuchet MS', Arial, sans-serif;
     --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     --text: #fff;
-    --accent: #00f5a0;
+    --accent: #00aaff;
     --muted: #6c757d;
     --surface: #1c1c1c;
-    --border: #00f5a0;
-    --btn-bg: #00f5a0;
+    --border: #00aaff;
+    --btn-bg: #00aaff;
     --btn-text: #000;
     --btn-delete: #fdcace;
 }
