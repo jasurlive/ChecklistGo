@@ -1,0 +1,43 @@
+.buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    background: transparent;
+    border: 1px solid #dddddd33;
+    border-radius: 6px;
+    font-size: 1rem;
+    padding: 2px 5px;
+}
+
+.button-group button:hover,
+.history-controls button:hover {
+    background: #0072b5;
+    cursor: pointer;
+}
+
+.history-controls {
+    display: flex;
+    justify-content: space-around;
+}
+
+.history-controls button {
+    background: transparent;
+        border: 1px solid #dddddd33;
+        border-radius: 6px;
+        font-size: 1rem;
+    padding: 4px 25px;
+}

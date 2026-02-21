@@ -1,11 +1,10 @@
 .footer {
+    width: 100%;
     text-align: center;
-    padding: 0.5rem;
-    background: linear-gradient(135deg, #203a43, #2c5364);
+    background: radial-gradient(circle at 20% 20%, #0b171f, #050a0b);
     color: #ffffff;
     position: fixed;
     bottom: 0;
-    width: 100%;
 }
 
 .footer p {

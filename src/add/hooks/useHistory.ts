@@ -13,7 +13,6 @@ export default function useHistory<T>(initialState: T) {
       futureRef.current = [];
       setState(newState);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [state]
   );
 

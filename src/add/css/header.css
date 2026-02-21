@@ -1,0 +1,36 @@
+:root {
+    --font: 'Trebuchet MS', Arial, sans-serif;
+    --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --text: #fff;
+    --accent: #00f5a0;
+    --muted: #6c757d;
+    --surface: #1c1c1c;
+    --border: #00f5a0;
+    --btn-bg: #00f5a0;
+    --btn-text: #000;
+    --btn-delete: #fdcace;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+
+header a {
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid #00f59f2e;
+    padding: 0.5rem 1rem;
+}
+
+header a:hover {
+    color: var(--bg);
+}
