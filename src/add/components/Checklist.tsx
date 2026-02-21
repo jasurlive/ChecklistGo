@@ -95,7 +95,7 @@ function Checklist() {
           ☰
         </div>
 
-        <span className={item.completed ? "completed-text" : ""}>
+        <span className={item.completed ? "completed-text" : "normal-text"}>
           {item.text}
         </span>
 
@@ -120,7 +120,7 @@ function Checklist() {
           onKeyDown={(e) => e.key === "Enter" && addItem()}
           placeholder="Add an item"
         />
-        <button onClick={addItem}>{isEditing ? "Update" : "Add"}</button>
+        <button onClick={addItem}>{isEditing ? "✅ Update" : "➕ Add"}</button>
       </div>
 
       <HistoryButtons
